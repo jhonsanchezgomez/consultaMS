@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.microservicio.sb.dao.Ejemplo;
 import com.microservicio.sb.entities.Tarjeta;
 import com.microservicio.sb.servicio.ITarjetaService;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+//import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 @RestController
 @RequestMapping("/tarjetacontroller")
@@ -30,13 +30,13 @@ public class TarjetaController {
 	}
 
 	@GetMapping("/tarjeta/{id}")
-	@HystrixCommand(fallbackMethod = "homeRespaldo")
+//	@HystrixCommand(fallbackMethod = "homeRespaldo")
 	public Tarjeta getOne(@PathVariable(value = "id") long id) {
 		return tService.get(id);
 	}
 
 	@GetMapping("/tarjetaporid/{id}")
-	@HystrixCommand(fallbackMethod = "homeRespaldo")
+//	@HystrixCommand(fallbackMethod = "homeRespaldo")
 	public Tarjeta getIdt(@PathVariable(value = "id") long id) {
 		return e.findUserByS(id);
 	}
